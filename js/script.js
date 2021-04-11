@@ -37,10 +37,24 @@ function checkToGenerate() {
     //
     else {
 
-        // show loading image
-        result.innerHTML = `<img src="img/loading.svg" alt="loading image">`
-        
-        getData()
+        //
+        if (paragraph.value > 100 || word.value > 100) {
+
+            alert('length cannot be more than 100')
+
+            return false
+
+        }
+
+        //
+        else {
+
+            // show loading image
+            result.innerHTML = `<img src="img/loading.svg" alt="loading image">`
+
+            getData()
+
+        }
 
     }
 
@@ -81,45 +95,33 @@ function getData() {
 // function to display generated words to dom
 function genLorem(whereToWrite, pCount, wCount, array, addCopyBtn) {
 
-    whereToWrite.innerHTML = '';
+    //
+    if (pCount == undefined || pCount <= 1) {
 
-    if (pCount > 100 || wCount > 100) {
+        whereToWrite.innerHTML = `<p>${array.splice(0, wCount).join(' ')}.</p>`
 
-        alert('length cannot be more than 100')
+    }
 
-        return false
+    //
+    if (pCount > 1) {
 
-    } else {
+        for (let i = 0; i < pCount; i++) {
 
-        //
-        if (pCount == undefined || pCount <= 1) {
+            //
+            if (i == 0) {
 
-            whereToWrite.innerHTML = `<p>${array.splice(0, wCount).join(' ')}.</p>`
+                whereToWrite.innerHTML = `<p>${array.splice(0, wCount).join(' ')}.</p>`
 
-        }
+                whereToWrite.innerHTML += '\n'
 
-        //
-        if (pCount > 1) {
+            }
 
-            for (let i = 0; i < pCount; i++) {
+            //
+            else {
 
-                //
-                if (i == 0) {
+                whereToWrite.innerHTML += `<p>${array.splice(wCount, wCount).join(' ')}.</p>`
 
-                    whereToWrite.innerHTML = `<p>${array.splice(0, wCount).join(' ')}.</p>`
-
-                    whereToWrite.innerHTML += '\n'
-
-                }
-
-                //
-                else {
-
-                    whereToWrite.innerHTML += `<p>${array.splice(wCount, wCount).join(' ')}.</p>`
-
-                    whereToWrite.innerHTML += '\n'
-
-                }
+                whereToWrite.innerHTML += '\n'
 
             }
 
