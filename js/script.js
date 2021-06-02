@@ -1,4 +1,5 @@
 // Dom Variables
+
 let word = document.getElementsByClassName('word')[0],
 
     paragraph = document.getElementsByClassName('paragraph')[0],
@@ -10,6 +11,7 @@ let word = document.getElementsByClassName('word')[0],
     toBtn = document.getElementsByClassName('toBtn')[0],
 
     // Data Variables
+
     myRequest,
 
     myData;
@@ -19,8 +21,6 @@ let word = document.getElementsByClassName('word')[0],
 generate.addEventListener('click', checkToGenerate)
 
 document.addEventListener('click', copyText)
-
-/**************************************************************************************************/
 
 // 
 function checkToGenerate() {
@@ -60,8 +60,6 @@ function checkToGenerate() {
 
 }
 
-/**************************************************************************************************/
-
 // function to generate words based on user values
 function getData() {
 
@@ -73,7 +71,6 @@ function getData() {
 
             myData = JSON.parse(this.responseText).fullWords[0].split(' '),
 
-                //
                 genLorem(result, +paragraph.value, +word.value, myData, toBtn)
 
         }
@@ -89,8 +86,6 @@ function getData() {
     myRequest.send()
 
 }
-
-/**************************************************************************************************/
 
 // function to display generated words to dom
 function genLorem(whereToWrite, pCount, wCount, array, addCopyBtn) {
@@ -133,8 +128,6 @@ function genLorem(whereToWrite, pCount, wCount, array, addCopyBtn) {
 
 }
 
-/**************************************************************************************************/
-
 // function to create an invisible textarea to allow copy
 function copyToClipboard(text) {
 
@@ -152,8 +145,6 @@ function copyToClipboard(text) {
 
 }
 
-/**************************************************************************************************/
-
 // function to generated words on click
 function copyText(event) {
 
@@ -166,5 +157,3 @@ function copyText(event) {
     }
 
 }
-
-/**************************************************************************************************/

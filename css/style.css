@@ -15,13 +15,13 @@ Contact Me: fatema131khaled@gmail.com
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    font-family: sans-serif
+    -o-box-sizing: border-box
 }
 
 /* Start Styling */
 
 body {
+    font-family: sans-serif;
     background: linear-gradient(to right, #ccffcc 0%, #ffffff 100%)
 }
 
@@ -90,7 +90,11 @@ article p:last-of-type {
     margin-bottom: 0
 }
 
-@media (max-width: 1100px) {
+/* End Styling */
+
+/* Start Media Query */
+
+@media (max-width: 1200px) {
 
     .div div,
     article {
@@ -98,7 +102,7 @@ article p:last-of-type {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
 
     .div div,
     article {
@@ -106,7 +110,7 @@ article p:last-of-type {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
     .div div,
     article {
@@ -114,12 +118,12 @@ article p:last-of-type {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
 
     .div div,
     article {
-        width: 84vw
+        width: 85vw
     }
 }
 
-/* End Styling */
+/* End Media Query */
