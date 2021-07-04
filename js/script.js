@@ -38,7 +38,7 @@ function checkToGenerate() {
     else {
 
         //
-        if (paragraph.value > 100 || word.value > 100) {
+        if (paragraph.value > 99 || word.value > 99) {
 
             alert('length cannot be more than 100')
 
@@ -81,7 +81,7 @@ function getData() {
         throw 'Request Failed'
     }
 
-    myRequest.open("GET", 'lorem/lorem.json', true)
+    myRequest.open("GET", '../data/lorem.js', true)
 
     myRequest.send()
 
