@@ -40,7 +40,7 @@ function checkToGenerate() {
         //
         if (paragraph.value > 99 || word.value > 99) {
 
-            alert('length cannot be more than 100')
+            alert('length cannot be more than 99')
 
             return false
 
