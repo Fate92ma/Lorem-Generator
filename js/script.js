@@ -81,7 +81,7 @@ function getData() {
         throw 'Request Failed'
     }
 
-    myRequest.open("GET", '../data/lorem.js', true)
+    myRequest.open("GET", 'data/lorem.js', true)
 
     myRequest.send()
 
